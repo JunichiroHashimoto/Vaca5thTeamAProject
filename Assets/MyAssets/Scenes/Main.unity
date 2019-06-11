@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabBegin: 0.55
   grabEnd: 0.35
-  m_parentHeldObject: 0
+  m_parentHeldObject: 1
   m_gripTransform: {fileID: 155659396}
   m_grabVolumes:
   - {fileID: 37942384}
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grabBegin: 0.55
   grabEnd: 0.35
-  m_parentHeldObject: 0
+  m_parentHeldObject: 1
   m_gripTransform: {fileID: 939373403}
   m_grabVolumes:
   - {fileID: 714732960}
