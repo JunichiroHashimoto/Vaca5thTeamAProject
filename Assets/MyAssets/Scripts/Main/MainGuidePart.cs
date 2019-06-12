@@ -6,11 +6,12 @@ using System;
 public class MainGuidePart : MonoBehaviour {
 
     AppManager appManager;
-
+    MessageManager msgManager;
 
     IEnumerator Start()
     {
         appManager = AppManager.instance;
+        msgManager = MessageManager.instance;
 
         Initialize();
 
@@ -49,7 +50,8 @@ public class MainGuidePart : MonoBehaviour {
     void GuideFirstGrabFlower()
     {
         // ガイドテキスト表示
-        Debug.Log("花を取ってガイドに沿って剣山に花を生けてみましょう");
+        msgManager.DisplayMessage("花を取って机の上の花器に花を生けてみましょう");
+        msgManager.ChangeMessage("ガイドにそって花を生けていってください", 6f);
     }
 
 

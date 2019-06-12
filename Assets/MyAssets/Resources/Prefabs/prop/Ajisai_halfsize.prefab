@@ -1521,7 +1521,7 @@ GameObject:
   - component: {fileID: 54232617954859424}
   m_Layer: 0
   m_Name: Ajisai_halfsize
-  m_TagString: Untagged
+  m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2312,8 +2312,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1858683314395800}
-  m_LocalRotation: {x: 0.28935018, y: -0, z: -0, w: 0.9572233}
-  m_LocalPosition: {x: -0.055, y: 0.272, z: 0.22}
+  m_LocalRotation: {x: 0.64571244, y: 0.02848701, z: -0.01309288, w: 0.76293683}
+  m_LocalPosition: {x: 0.595, y: 0.976, z: 0.247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4471810775435516}
@@ -2419,7 +2419,7 @@ Transform:
   - {fileID: 4805911853905290}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 33.638, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 80.409004, y: 9.172001, z: 5.7910004}
 --- !u!4 &4492732214332990
 Transform:
   m_ObjectHideFlags: 1
@@ -4054,7 +4054,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 3a27498afde8ae441b4431c6abfe8476, type: 2}
-  - {fileID: 2100002, guid: f2f4c591ece115b44aa0e6c9ba958948, type: 3}
+  - {fileID: 2100000, guid: 0fe40c2b512ca9945a53594e91cc2fd7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

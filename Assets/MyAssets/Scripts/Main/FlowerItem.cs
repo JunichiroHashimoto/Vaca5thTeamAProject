@@ -3,10 +3,5 @@ using System.Collections.Generic;
 
 public class FlowerItem : ItemBase
 {
-    public FlowerItem(int id, string name)
-    {
-        this.itemKind = ItemKind.Flower;
-        this.itemId   = id;
-        this.itemName = name;
-    }
+    public FlowerItem(int id, string rcName, string jpName):base(id, ItemKind.Flower, rcName, jpName){ }
 }
