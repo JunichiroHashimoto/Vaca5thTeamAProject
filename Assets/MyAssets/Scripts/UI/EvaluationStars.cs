@@ -22,40 +22,23 @@ public class EvaluationStars : MonoBehaviour
 
     void Evaluation_flower(int starsNum)
     {
-        if (starsNum <= 0)
+        GameObject starObj = (GameObject)Resources.Load("star");
+        GameObject No_starObj = (GameObject)Resources.Load("No_star");
+       
+        float x = 0;
+        int minu_point = 5 - starsNum;
+
+        for (int i = 0; i < starsNum; i++)
         {
-            for (int i = 0; i < starsNum; i++)
-            {
-                GameObject ball = Instantiate(starPrefab) as GameObject;
-                ball.transform.position = new Vector3(i, 0, 0);
-            }
+            x += 2.5f;
+            Instantiate(starObj, new Vector3(x, 2.0f, 0.0f), Quaternion.identity);
         }
 
-        if (starsNum == 3)
+        for (int i = 0; i < minu_point; i++)
         {
-            for (int i = 0; i < starsNum; i++)
-            {
-                GameObject ball = Instantiate(starPrefab) as GameObject;
-                ball.transform.position = new Vector3(i, 0, 0);
-            }
+            x += 2.5f;
+            Instantiate(No_starObj, new Vector3(x, 2.0f, 0.0f), Quaternion.identity);
         }
 
-        if (starsNum == 4)
-        {
-            for (int i = 0; i < starsNum; i++)
-            {
-                GameObject ball = Instantiate(starPrefab) as GameObject;
-                ball.transform.position = new Vector3(i, 0, 0);
-            }
-        }
-
-        if (starsNum == 5)
-        {
-            for (int i = 0; i < starsNum; i++)
-            {
-                GameObject ball = Instantiate(starPrefab) as GameObject;
-                ball.transform.position = new Vector3(i, 0, 0);
-            }
-        }
     }
 }
