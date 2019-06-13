@@ -31,6 +31,8 @@ public class AppManager : MonoBehaviour {
         }
     }
 
+    public GameObject lastPutFlower { get; private set; }
+
     void Awake()
     {
         instance = this;
@@ -51,7 +53,7 @@ public class AppManager : MonoBehaviour {
     // フリー配置へ移行
     public void ChangePartFree()
     {
-        ClearIkebana();
+        ClearIkebanaWithVase();
 
         gameObject.AddComponent<MainFreePart>();
 
@@ -74,13 +76,14 @@ public class AppManager : MonoBehaviour {
         _isPut = false;
     }
 
-    public void PutFlower()
+    public void PutFlower(GameObject flowerObj)
     {
         _isPut = true;
+        lastPutFlower = flowerObj;
     }
 
-    // 生け花を初期化
-    void ClearIkebana()
+    // 生け花を花器毎削除
+    void ClearIkebanaWithVase()
     {
         foreach(Transform ch in ikebanaRootObj.transform)
         {

@@ -6,6 +6,7 @@ using System.Linq;
 public class Kenzan : MonoBehaviour {
 
     Ikebana ikebanaRoot;
+    bool isGrabEnter = false;
 
 	void Start () {
         ikebanaRoot = GetComponentInParent<Ikebana>();
@@ -14,18 +15,38 @@ public class Kenzan : MonoBehaviour {
             Debug.LogError("Ikebanaコンポーネントが見つかりませんでした");
         }
     }
-	
-    // TODO
-    // 途中で剣山から抜いた時の処理を追加
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        // 既に剣山に刺さっている花は処理しない
-        if(ikebanaRoot.flowers.Contains(other.transform.parent.gameObject))
+        // 花オブジェクト以外は処理しない
+        if ( !other.transform.parent.gameObject.CompareTag(CommonDefine.TagFlower) )
         {
             return;
         }
 
+        if(other.transform.parent.GetComponent<OVRGrabbable>().isGrabbed)
+        {
+            Debug.Log("isGrabEnter = true");
+            isGrabEnter = true;
+        }
+
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        // 花オブジェクト以外は処理しない
+        if ( !other.transform.parent.gameObject.CompareTag(CommonDefine.TagFlower) )
+        {
+            return;
+        }
+
+        // 既に剣山に刺さっている花は処理しない
+        if (ikebanaRoot.flowers.Contains(other.transform.parent.gameObject))
+        {
+            return;
+        }
+
+        other.transform.parent.GetComponent<Rigidbody>().isKinematic = true;
 
         if (other.transform.parent.gameObject.CompareTag(CommonDefine.TagFlower))
         {
@@ -34,8 +55,31 @@ public class Kenzan : MonoBehaviour {
             {
                 // 剣山を親に設定
                 ikebanaRoot.PutFlower(other.transform.parent.gameObject);
+                isGrabEnter = false;
             }
         }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.transform.parent.gameObject.CompareTag(CommonDefine.TagFlower))
+        {
+            // ↓OVRGrabber側で掴んでる間、isKinematicをTrueにして離すとfalseになるようになっているので
+            // 余計な事はしない
+            //if (other.transform.parent.GetComponent<Rigidbody>().isKinematic)
+            //{
+            //    Debug.Log("isKinematic true -> false");
+            //    other.transform.parent.GetComponent<Rigidbody>().isKinematic = false;
+            //}
+
+            // 花を掴んだまま剣山に抜き差ししても、「抜いた」処理はしない
+            if (!isGrabEnter)
+            {
+                ikebanaRoot.PullOutFlower(other.transform.parent.gameObject);
+            }
+
+        }
+
     }
 
 }

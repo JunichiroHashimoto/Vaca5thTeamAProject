@@ -10,24 +10,38 @@ public class Ikebana : MonoBehaviour {
 
     AppManager appManager;
 
-	// Use this for initialization
-	void Start () {
+    void Start()
+    {
         appManager = AppManager.instance;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void PutFlower(GameObject flowerObj)
     {
         Debug.Log("Ikebana:PutFlower()");
 
         flowers.Add(flowerObj);
-        appManager.PutFlower();
+        appManager.PutFlower(flowerObj);
 
-        /// 花を剣山の子に設定
+        // 花を剣山の子に設定
         flowerObj.transform.SetParent(kenzanObj.transform);
+    }
+
+    public void PullOutFlower(GameObject flowerObj)
+    {
+        Debug.Log("Ikebana:PullOutFlower()");
+
+        if(flowers.Contains(flowerObj))
+        {
+            flowers.Remove(flowerObj);
+        }
+        appManager.PutFlower(flowerObj);
+
+        // もし何らかの理由で剣山が親のままだったら親設定を解除する
+        // 通常はハンドコントローラーの操作で掴んで抜く時にコントローラーと親子階層になっているはず
+        if(flowerObj.transform.parent == kenzanObj.transform)
+        {
+            Debug.Log("Ikebana:PullOutFlower() SetParent(null)");
+            flowerObj.transform.parent.SetParent(null);
+        }
     }
 }

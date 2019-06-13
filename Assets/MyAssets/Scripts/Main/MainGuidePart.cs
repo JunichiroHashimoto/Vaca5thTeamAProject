@@ -8,6 +8,10 @@ public class MainGuidePart : MonoBehaviour {
     AppManager appManager;
     MessageManager msgManager;
 
+    GameObject sinFlower;
+    GameObject soeFlower;
+    GameObject hikaeFlower;
+
     IEnumerator Start()
     {
         appManager = AppManager.instance;
@@ -31,18 +35,18 @@ public class MainGuidePart : MonoBehaviour {
 
         yield return (WaitFirstFlowerGrab());
 
-        Debug.Log("真待ち");
+        Debug.Log("真の位置へ花が生けられるのを待ちます");
         yield return (WaitPutFlowerSin());
-        Debug.Log("副え待ち");
+        Debug.Log("副えの位置へ花が生けられるのを待ちます");
         yield return (WaitPutFlowerSoe());
-        Debug.Log("控え待ち");
+        Debug.Log("副えの位置へ花が生けられるのを待ちます");
         yield return (WaitPutFlowerHikae());
 
         Debug.Log("ガイド終了メッセージ、UI操作を待って次のフリー配置へ移行");
         //yield return (WaitUIOK());
         yield return new WaitForSeconds(3);
 
-        Debug.Log("フリー配置へ");
+        Debug.Log("フリー配置パートへ");
         appManager.ChangePartFree();
 
     }
@@ -50,8 +54,8 @@ public class MainGuidePart : MonoBehaviour {
     void GuideFirstGrabFlower()
     {
         // ガイドテキスト表示
-        msgManager.DisplayMessage("花を取って机の上の花器に花を生けてみましょう");
-        msgManager.ChangeMessage("ガイドにそって花を生けていってください", 6f);
+        msgManager.DisplayMessage("花を手に取って花器に花を生けてみましょう");
+        msgManager.ChangeMessage("ガイドにそって花を生けて見ましょう", 6f);
     }
 
 
@@ -74,10 +78,12 @@ public class MainGuidePart : MonoBehaviour {
     IEnumerator WaitPutFlowerSin()
     {
         appManager.PutWaitInit();
-        for (; ; )
+        for (;;)
         {
             if (appManager.isPut)
             {
+                Debug.Log("真の花が生けられました");
+                sinFlower = appManager.lastPutFlower;
                 yield break;
             }
             yield return null;
@@ -88,10 +94,12 @@ public class MainGuidePart : MonoBehaviour {
     IEnumerator WaitPutFlowerSoe()
     {
         appManager.PutWaitInit();
-        for (; ; )
+        for (;;)
         {
-            if (appManager.isPut)
+            if (appManager.isPut && appManager.lastPutFlower != sinFlower)
             {
+                Debug.Log("副えの花が生けられました");
+                soeFlower = appManager.lastPutFlower;
                 yield break;
             }
             yield return null;
@@ -102,10 +110,12 @@ public class MainGuidePart : MonoBehaviour {
     IEnumerator WaitPutFlowerHikae()
     {
         appManager.PutWaitInit();
-        for (; ; )
+        for (;;)
         {
-            if (appManager.isPut)
+            if (appManager.isPut && appManager.lastPutFlower != sinFlower && appManager.lastPutFlower != soeFlower)
             {
+                Debug.Log("控えの花が生けられました");
+                hikaeFlower = appManager.lastPutFlower;
                 yield break;
             }
             yield return null;
