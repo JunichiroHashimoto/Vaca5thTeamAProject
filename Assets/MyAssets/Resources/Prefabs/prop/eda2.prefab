@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 4781788644873110}
   - component: {fileID: 114672587382940132}
   - component: {fileID: 54470824200448496}
+  - component: {fileID: 114756043581064618}
   m_Layer: 0
   m_Name: eda2
   m_TagString: Flower
@@ -492,3 +493,14 @@ MonoBehaviour:
   m_grabPoints:
   - {fileID: 65837261915461982}
   - {fileID: 65028437763516630}
+--- !u!114 &114756043581064618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398882603841880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e1076c6420baa4082de0261b8bfbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

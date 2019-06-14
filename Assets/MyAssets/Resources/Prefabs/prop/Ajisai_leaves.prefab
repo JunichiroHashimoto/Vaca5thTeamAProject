@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 4180347202220798}
   - component: {fileID: 114405174585493818}
   - component: {fileID: 54345201613887798}
+  - component: {fileID: 114514435396512342}
   m_Layer: 0
   m_Name: Ajisai_leaves
   m_TagString: Flower
@@ -1123,3 +1124,14 @@ MonoBehaviour:
   m_snapOffset: {fileID: 0}
   m_grabPoints:
   - {fileID: 64837993036042266}
+--- !u!114 &114514435396512342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271359754927034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e1076c6420baa4082de0261b8bfbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -89,6 +89,12 @@ public class AppManager : MonoBehaviour {
         {
             Destroy(ch.gameObject);
         }
+
+        // 生けてない花を削除
+        foreach(ItemObject itemObj in Resources.FindObjectsOfTypeAll<ItemObject>())
+        {
+            Destroy(itemObj.gameObject);
+        }
     }
 
 }

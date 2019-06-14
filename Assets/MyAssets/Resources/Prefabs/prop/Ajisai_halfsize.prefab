@@ -1537,6 +1537,7 @@ GameObject:
   - component: {fileID: 4485078413165160}
   - component: {fileID: 114310454239067240}
   - component: {fileID: 54232617954859424}
+  - component: {fileID: 114452035545186408}
   m_Layer: 0
   m_Name: Ajisai_halfsize
   m_TagString: Flower
@@ -7732,3 +7733,14 @@ MonoBehaviour:
   m_grabPoints:
   - {fileID: 65223585344732148}
   - {fileID: 65815707139625162}
+--- !u!114 &114452035545186408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858683314395800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e1076c6420baa4082de0261b8bfbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
