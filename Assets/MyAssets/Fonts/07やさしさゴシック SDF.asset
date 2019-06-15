@@ -9,21 +9,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: "07\u3084\u3055\u3057\u3055\u30B3\u3099\u30B7\u30C3\u30AF SDF"
+  m_Name: "07\u3084\u3055\u3057\u3055\u30B4\u30B7\u30C3\u30AF SDF"
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -37781452
   material: {fileID: 21030565694345574}
-  materialHashCode: 0
+  materialHashCode: -1346246081
   fontAssetType: 1
   m_fontInfo:
     Name: 07YasashisaGothic
     PointSize: 17
-    Scale: 0
+    Scale: 1
     CharacterCount: 404
     LineHeight: 17
     Baseline: 0
     Ascender: 15.0625
-    CapHeight: 0
+    CapHeight: 12.749999
     Descender: -2
     CenterLine: 0
     SuperscriptOffset: 15.0625
@@ -33,7 +33,7 @@ MonoBehaviour:
     UnderlineThickness: 0.796875
     strikethrough: 4.75
     strikethroughThickness: 0.796875
-    TabWidth: 0
+    TabWidth: 42.5
     Padding: 5
     AtlasWidth: 512
     AtlasHeight: 512
