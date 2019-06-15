@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 54406234798279770}
   - component: {fileID: 114708803288627892}
   m_Layer: 0
-  m_Name: "\u5263\u5C71"
+  m_Name: kenzan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
