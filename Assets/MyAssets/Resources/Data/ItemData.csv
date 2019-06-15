@@ -2,8 +2,12 @@
 2,1,Ajisai_leaves,あじさい(葉)
 3,1,eda1,枝1
 4,1,eda2,枝2
+5,1,tulip,チューリップ（赤）
+6,1,tulip2,チューリップ2（赤）
 101,2,kenzan,剣山1
 201,3,kaki01_white,花器1(白)
 202,3,kaki01_beige,花器1(ベージュ)
+203,3,kaki01_black,花器1(黒)
 221,3,kaki02_white,花器2(白)
 222,3,kaki02_purple,花器2(紫)
+223,3,kaki02_black,花器1(黒)
