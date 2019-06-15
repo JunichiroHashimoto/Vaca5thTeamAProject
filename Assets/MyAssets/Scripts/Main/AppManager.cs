@@ -23,6 +23,8 @@ public class AppManager : MonoBehaviour {
     [SerializeField]
     GameObject ikebanaRootObj;
 
+    public ItemBox itemBox;
+
     public bool isGrabbingFlower
     {
         get
