@@ -5,6 +5,9 @@ using System.Linq;
 
 public class ItemManager : MonoBehaviour {
 
+    [SerializeField]
+    ItemBox itemBox;
+
     Dictionary<int, ItemBase> allItemDict;
  
     void Start () {
@@ -18,6 +21,8 @@ public class ItemManager : MonoBehaviour {
             int id = int.Parse(itemDataArr[i].Split(',')[0]);
             allItemDict.Add(id, new ItemBase(itemDataArr[i]));
         }
+
+        itemBox.SetItemList(allItemDict);
 
         Resources.UnloadUnusedAssets();
 

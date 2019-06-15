@@ -31,7 +31,6 @@ public class MainGuidePart : MonoBehaviour {
     {
         GameObject handPrefab = Resources.Load("Prefabs/Guide/GuideRHand") as GameObject;
         guideHand = Instantiate(handPrefab);
-        Resources.UnloadAsset(handPrefab);
 
         guideHand.SetActive(false);
 
