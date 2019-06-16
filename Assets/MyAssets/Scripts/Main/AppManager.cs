@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AppManager : MonoBehaviour {
 
@@ -25,6 +26,8 @@ public class AppManager : MonoBehaviour {
 
     public ItemBox itemBox;
 
+    public Ikebana ikebanaRoot;
+
     public bool isGrabbingFlower
     {
         get
@@ -43,6 +46,8 @@ public class AppManager : MonoBehaviour {
 
     void Start()
     {
+        ikebanaRoot = GameObject.FindObjectOfType<Ikebana>();
+
         StartGuidePart();
     }
 
@@ -55,12 +60,19 @@ public class AppManager : MonoBehaviour {
     // フリー配置へ移行
     public void ChangePartFree()
     {
-        ClearIkebanaWithVase();
+        ClearIkebana();
 
         gameObject.AddComponent<MainFreePart>();
 
         Destroy(gameObject.GetComponent<MainGuidePart>());
     }
+
+    // ガイドパートに戻る（デバッグ用）
+    public void ChangeGuidePart()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
     // 結果表示へ移行
     public void ChangeResultPart()
@@ -85,17 +97,34 @@ public class AppManager : MonoBehaviour {
     }
 
     // 生け花を花器毎削除
-    void ClearIkebanaWithVase()
+    void ClearIkebana()
     {
         foreach(Transform ch in ikebanaRootObj.transform)
         {
             Destroy(ch.gameObject);
         }
 
-        // 生けてない花を削除
-        foreach(ItemObject itemObj in Resources.FindObjectsOfTypeAll<ItemObject>())
+        GameObject leftGrabObject = null;
+        GameObject rightGrabObject = null;
+
+        if (leftHandState.isFlowerGrabbing)
         {
-            Destroy(itemObj.gameObject);
+            leftGrabObject = leftHandState.GetComponent<OVRGrabber>().grabbedObject.gameObject;
+        }
+        if (rightHandState.isFlowerGrabbing)
+        {
+            rightGrabObject = rightHandState.GetComponent<OVRGrabber>().grabbedObject.gameObject;
+        }
+
+        // 生けてない花を削除
+        foreach (ItemObject itemObj in Resources.FindObjectsOfTypeAll<ItemObject>())
+        {
+            GameObject targetObj = itemObj.gameObject;
+            // 手に持っていない花またはアイテムを削除
+            if (leftGrabObject != targetObj && rightGrabObject != targetObj)
+            {
+                Destroy(itemObj.gameObject);
+            }
         }
     }
 
