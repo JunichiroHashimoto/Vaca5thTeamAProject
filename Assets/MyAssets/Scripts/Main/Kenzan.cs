@@ -12,7 +12,8 @@ public class Kenzan : MonoBehaviour {
         ikebanaRoot = GetComponentInParent<Ikebana>();
         if (ikebanaRoot == null)
         {
-            Debug.LogError("Ikebanaコンポーネントが見つかりませんでした");
+            // フリーパートで剣山を選択した時はこちら
+            ikebanaRoot = AppManager.instance.ikebanaRoot;
         }
     }
 
@@ -62,22 +63,24 @@ public class Kenzan : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        if (other.transform.parent.gameObject.CompareTag(CommonDefine.TagFlower))
+        // 花オブジェクト以外は処理しない
+        if (!other.transform.parent.gameObject.CompareTag(CommonDefine.TagFlower))
         {
-            // ↓OVRGrabber側で掴んでる間、isKinematicをTrueにして離すとfalseになるようになっているので
-            // 余計な事はしない
-            //if (other.transform.parent.GetComponent<Rigidbody>().isKinematic)
-            //{
-            //    Debug.Log("isKinematic true -> false");
-            //    other.transform.parent.GetComponent<Rigidbody>().isKinematic = false;
-            //}
+            return;
+        }
 
-            // 花を掴んだまま剣山に抜き差ししても、「抜いた」処理はしない
-            if (!isGrabEnter)
-            {
-                ikebanaRoot.PullOutFlower(other.transform.parent.gameObject);
-            }
+        // ↓OVRGrabber側で掴んでる間、isKinematicをTrueにして離すとfalseになるようになっているので
+        // 余計な事はしない
+        //if (other.transform.parent.GetComponent<Rigidbody>().isKinematic)
+        //{
+        //    Debug.Log("isKinematic true -> false");
+        //    other.transform.parent.GetComponent<Rigidbody>().isKinematic = false;
+        //}
 
+        // 花を掴んだまま剣山に抜き差ししても、「抜いた」という処理はしない
+        if (!isGrabEnter)
+        {
+            ikebanaRoot.PullOutFlower(other.transform.parent.gameObject);
         }
 
     }
