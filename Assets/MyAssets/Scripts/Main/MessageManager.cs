@@ -27,7 +27,7 @@ public class MessageManager : MonoBehaviour {
         messagePanel.gameObject.SetActive(false);
 
         // メッセージパネル出現以外のアニメはしないのでAnimatorをOFF
-        CommonFunc.DelayInvoke(() =>
+        AppManager.DelayInvoke(() =>
         {
             messagePanel.GetComponent<Animator>().enabled = false;
         }, 5f);

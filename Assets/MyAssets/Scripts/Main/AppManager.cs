@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class AppManager : MonoBehaviour {
 
@@ -127,5 +128,24 @@ public class AppManager : MonoBehaviour {
             }
         }
     }
+
+    static public void DelayInvoke(Action method, float delay)
+    {
+
+        instance._DelayInvoke(method, delay);
+    }
+
+    void _DelayInvoke(Action method, float delay)
+    {
+        StartCoroutine(__DelayInvoke(method, delay));
+    }
+
+    IEnumerator __DelayInvoke(Action method, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        method.Invoke();
+    }
+
 
 }

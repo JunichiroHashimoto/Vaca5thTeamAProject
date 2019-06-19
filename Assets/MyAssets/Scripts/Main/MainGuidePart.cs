@@ -94,7 +94,7 @@ public class MainGuidePart : MonoBehaviour {
     void GuidePutFlowerPositionSin()
     {
         // 生ける位置の半透明ガイドを表示
-        CommonFunc.DelayInvoke(flowerGuide.DisplaySin, 2f);
+        AppManager.DelayInvoke(flowerGuide.DisplaySin, 2f);
 
         msgManager.ChangeMessage("そうです、上手く掴めましたね", 0.3f);
         msgManager.ChangeMessage("ではその花を生けてみましょう",2f);
@@ -109,7 +109,7 @@ public class MainGuidePart : MonoBehaviour {
     void GuidePutFlowerPositionSoe()
     {
         // 生ける位置の半透明ガイドを表示
-        CommonFunc.DelayInvoke(flowerGuide.DisplaySoe,3.3f);
+        AppManager.DelayInvoke(flowerGuide.DisplaySoe,3.3f);
 
         msgManager.ChangeMessage("上手に生けられましたね", 0.3f);
         msgManager.ChangeMessage("次に少し短めの枝を45度程度左に傾けて生けます\n"
@@ -121,7 +121,7 @@ public class MainGuidePart : MonoBehaviour {
     void GuidePutFlowerPositionHikae()
     {
         // 生ける位置の半透明ガイドを表示
-        CommonFunc.DelayInvoke(flowerGuide.DisplayHikae, 3.3f);
+        AppManager.DelayInvoke(flowerGuide.DisplayHikae, 3.3f);
 
         msgManager.ChangeMessage("お見事です！",0.3f);
         msgManager.ChangeMessage("では最後に今度は花を右に75度と\n大きく傾けて生けてみましょう", 3f);
@@ -188,7 +188,7 @@ public class MainGuidePart : MonoBehaviour {
                 sinFlower = appManager.lastPutFlower;
 
                 // 半透明ガイドを消去
-                CommonFunc.DelayInvoke(flowerGuide.Hide, 0.2f);
+                AppManager.DelayInvoke(flowerGuide.Hide, 0.2f);
                 yield break;
             }
             yield return null;
@@ -207,7 +207,7 @@ public class MainGuidePart : MonoBehaviour {
                 soeFlower = appManager.lastPutFlower;
 
                 // 半透明ガイドを消去
-                CommonFunc.DelayInvoke(flowerGuide.Hide, 0.2f);
+                AppManager.DelayInvoke(flowerGuide.Hide, 0.2f);
                 yield break;
             }
             yield return null;
@@ -226,7 +226,7 @@ public class MainGuidePart : MonoBehaviour {
                 hikaeFlower = appManager.lastPutFlower;
 
                 // 半透明ガイドを消去
-                CommonFunc.DelayInvoke(flowerGuide.Hide, 0.2f);
+                AppManager.DelayInvoke(flowerGuide.Hide, 0.2f);
                 yield break;
             }
             yield return null;
