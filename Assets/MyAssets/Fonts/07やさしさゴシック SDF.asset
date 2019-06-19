@@ -18,12 +18,12 @@ MonoBehaviour:
   m_fontInfo:
     Name: 07YasashisaGothic
     PointSize: 29
-    Scale: 0
+    Scale: 1
     CharacterCount: 408
     LineHeight: 29
     Baseline: 0
     Ascender: 25.6875
-    CapHeight: 0
+    CapHeight: 21.749998
     Descender: -3.375
     CenterLine: 0
     SuperscriptOffset: 25.6875
@@ -33,7 +33,7 @@ MonoBehaviour:
     UnderlineThickness: 1.359375
     strikethrough: 8.113636
     strikethroughThickness: 1.359375
-    TabWidth: 0
+    TabWidth: 72.5
     Padding: 5
     AtlasWidth: 1024
     AtlasHeight: 512
@@ -3838,9 +3838,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
