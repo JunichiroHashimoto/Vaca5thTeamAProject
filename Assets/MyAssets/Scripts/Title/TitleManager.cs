@@ -34,13 +34,17 @@ public class TitleManager : MonoBehaviour {
             return;
         }
 
-        if ( OVRInput.GetDown(OVRInput.Button.One)
+        if (OVRInput.GetDown(OVRInput.Button.One)
            || OVRInput.GetDown(OVRInput.Button.Two)
            || OVRInput.GetDown(OVRInput.Button.Three)
-           || OVRInput.GetDown(OVRInput.Button.Four) )
+           || OVRInput.GetDown(OVRInput.Button.Four)
+           || OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)
+           || OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)
+        )
         {
             startSEAudio.Play();
 
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Main");
             StartCoroutine(FadeOut());
         }
     }
@@ -50,16 +54,13 @@ public class TitleManager : MonoBehaviour {
         for (;;)
         {
             var color = fadePanelImage.color;
-            fadePanelImage.color = new Color(color.r, color.g, color.b, color.a + 0.075f);
-            Debug.Log(fadePanelImage.color);
-
-            bgmAudio.volume -= 0.05f;
-            yield return new WaitForSeconds(0.1f);
+            fadePanelImage.color = new Color(color.r, color.g, color.b, color.a + 0.05f);
+            bgmAudio.volume -= 0.025f;
             if(bgmAudio.volume <= 0)
             {
-                UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Main");
                 yield break;
             }
+            yield return new WaitForSeconds(0.05f);
         }
 
     }

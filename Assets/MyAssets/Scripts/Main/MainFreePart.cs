@@ -10,15 +10,16 @@ public class MainFreePart : MonoBehaviour {
     ItemBox itemBox;
 
     // Use this for initialization
-    IEnumerator Start () {
+    void Start () {
         appManager = AppManager.instance;
         msgManager = MessageManager.instance;
         itemBox = appManager.itemBox;
 
-        GuideItemBoxUsage();
-
-        yield return new WaitForSeconds(10f);
+        // アイテム選択スクロールビューを表示
         itemBox.gameObject.SetActive(true);
+
+        // ガイドメッセージ表示
+        GuideItemBoxUsage();
 
     }
 	
@@ -33,14 +34,13 @@ public class MainFreePart : MonoBehaviour {
         Debug.Log("MainFreePart; Initialize()");
 
         // 右のスクロールビューから花器、花を選ぶガイドを表示
-        msgManager.ChangeMessage("ここからは好きな花器・花材を選んで自由に生け花を" +
-            "楽しんでください" +
-            "右手側に表示されるリスト画面の中から素材を選んでください",0.5f);
+        msgManager.ChangeMessage("ここからは自由に生け花を楽しんでください\n\n" +
+            "右手側のボードから好きな花器・花材を選んで使えます",0.5f);
 
-        msgManager.ChangeMessage("コントローラーを右ボードの画像に向けると青い輪が表示されますでの" +
-            "使いたい花の画像に向かって右手人差し指のトリガーを引いてください"+
-            "目の前に表示される花が気に入ればそのまま手で掴んめます", 15f);
-
+        msgManager.ChangeMessage("コントローラーを、右側のボードに向けると\n" +
+            "青いリングが表示されます\n" + 
+            "使いたい花を選んで人差し指のトリガーを引いてください" +
+            "花が目の前に現れますそのまま掴んで生けてください", 15f);
 
     }
 

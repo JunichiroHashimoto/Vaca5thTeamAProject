@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4009756629499380}
   - component: {fileID: 54580086002726572}
   - component: {fileID: 114955940500475026}
+  - component: {fileID: 114492701988410270}
   m_Layer: 0
   m_Name: kaki01_beige
   m_TagString: Untagged
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265754149711236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.067, z: 0}
+  m_LocalPosition: {x: 0, y: -0.018, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4295404824274764}
@@ -137,11 +138,22 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1152225826548302}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0022808278, y: 0.0025021865, z: 0.00077112205}
   m_Center: {x: 0.00026217854, y: 0.0000015117228, z: 0.00026728475}
+--- !u!114 &114492701988410270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265754149711236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e1076c6420baa4082de0261b8bfbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114955940500475026
 MonoBehaviour:
   m_ObjectHideFlags: 1

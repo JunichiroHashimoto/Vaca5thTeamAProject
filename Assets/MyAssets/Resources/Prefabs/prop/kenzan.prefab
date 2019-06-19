@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 4123098323301066}
   - component: {fileID: 54406234798279770}
   - component: {fileID: 114708803288627892}
+  - component: {fileID: 114802144619403160}
   m_Layer: 0
   m_Name: kenzan
   m_TagString: Untagged
@@ -54,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1774612876720446}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.0216, z: 0}
+  m_LocalPosition: {x: 0, y: 0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4548429372895684}
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1155653200770082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.04249997, z: 0.0055000186}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.14994, y: 0.01, z: 0.128955}
   m_Children: []
   m_Father: {fileID: 4123098323301066}
@@ -126,8 +127,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -170,4 +171,15 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints:
-  - {fileID: 0}
+  - {fileID: 65491920222388656}
+--- !u!114 &114802144619403160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774612876720446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e1076c6420baa4082de0261b8bfbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
